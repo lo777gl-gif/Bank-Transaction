@@ -76,6 +76,7 @@ class VisitorTest {
             public String visitSavings(SavingsAccount a) { return "savings"; }
             public String visitCard(Card c) { return "card"; }
             public String visitLoan(Loan l) { return "loan"; }
+            public String visitDeposit(Deposit d) { return "deposit"; }
         };
         // The static type is Holding / Element; the element itself calls back the matching method.
         List<Holding> holdings = nurlan.holdings();

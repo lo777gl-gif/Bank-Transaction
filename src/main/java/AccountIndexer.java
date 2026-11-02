@@ -72,4 +72,9 @@ public class AccountIndexer implements Visitor<Void> {
     public Void visitLoan(Loan loan) {
         return null;
     }
+
+    @Override
+    public Void visitDeposit(Deposit deposit) {
+        return null;
+    }
 }

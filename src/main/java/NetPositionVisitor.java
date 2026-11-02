@@ -34,4 +34,9 @@ public class NetPositionVisitor implements Visitor<Long> {
     public Long visitLoan(Loan loan) {
         return -loan.principalCents();
     }
+
+    @Override
+    public Long visitDeposit(Deposit deposit) {
+        return deposit.balanceCents();
+    }
 }

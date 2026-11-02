@@ -45,4 +45,9 @@ public class LargeHoldingsFilter implements Visitor<List<Holding>> {
     public List<Holding> visitLoan(Loan loan) {
         return loan.principalCents() >= minCents ? List.of(loan) : List.of();
     }
+
+    @Override
+    public List<Holding> visitDeposit(Deposit deposit) {
+        return deposit.balanceCents() >= minCents ? List.of(deposit) : List.of();
+    }
 }

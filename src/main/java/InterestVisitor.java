@@ -39,4 +39,9 @@ public class InterestVisitor implements Visitor<Long> {
     public Long visitLoan(Loan loan) {
         return loan.principalCents() * loan.rateBp() / BASIS_POINTS;
     }
+
+    @Override
+    public Long visitDeposit(Deposit deposit) {
+        return -(deposit.balanceCents() * deposit.rateBp() / BASIS_POINTS);
+    }
 }

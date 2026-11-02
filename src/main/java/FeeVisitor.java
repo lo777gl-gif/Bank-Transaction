@@ -66,4 +66,9 @@ public class FeeVisitor implements Visitor<Void> {
         charge("loan", fees.loanCents());
         return null;
     }
+
+    @Override
+    public Void visitDeposit(Deposit deposit) {
+        return null;   // term deposits are free
+    }
 }

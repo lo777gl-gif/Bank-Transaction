@@ -44,6 +44,12 @@ public class StatementExporter implements Visitor<String> {
                 + ",\"ratePercent\":" + Money.percent(l.rateBp()) + ",\"termMonths\":" + l.termMonths() + "}";
     }
 
+    @Override
+    public String visitDeposit(Deposit d) {
+        return "{\"type\":\"deposit\",\"id\":" + quote(d.id()) + ",\"balance\":" + Money.format(d.balanceCents())
+                + ",\"ratePercent\":" + Money.percent(d.rateBp()) + ",\"termMonths\":" + d.termMonths() + "}";
+    }
+
     private String array(List<? extends Element> items) {
         StringJoiner json = new StringJoiner(",", "[", "]");
         for (Element item : items) {
